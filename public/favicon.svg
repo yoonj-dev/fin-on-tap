@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="finGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+  
+  <!-- Financial Temple / Vault Pillars -->
+  <!-- Roof Triangle / Pediment -->
+  <polygon points="256,90 100,180 412,180" fill="#f59e0b" filter="url(#glow)"/>
+  <rect x="110" y="180" width="292" height="24" rx="4" fill="#fbbf24"/>
+  
+  <!-- 4 Pillars (Money Center, IB, Asset Mgmt, Payments) -->
+  <rect x="130" y="214" width="44" height="170" rx="8" fill="#10b981"/>
+  <rect x="198" y="214" width="44" height="170" rx="8" fill="#06b6d4"/>
+  <rect x="270" y="214" width="44" height="170" rx="8" fill="#3b82f6"/>
+  <rect x="338" y="214" width="44" height="170" rx="8" fill="#8b5cf6"/>
+  
+  <!-- Base Foundation Steps -->
+  <rect x="100" y="394" width="312" height="20" rx="4" fill="#fbbf24"/>
+  <rect x="80" y="420" width="352" height="24" rx="6" fill="#f59e0b"/>
+</svg>
