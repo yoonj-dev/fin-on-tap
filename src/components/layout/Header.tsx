@@ -8,6 +8,7 @@ import {
   Cpu,
   Layers,
   Activity,
+  TrendingUp,
 } from 'lucide-react';
 import { Theme } from '../../lib/theme';
 import { FinTicker, FinStock } from '../../types/financials';
@@ -91,7 +92,20 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Right Action Menu */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Stock on Tap Direct Hub Link */}
+            <a
+              href={activeTicker ? `https://stock.on-tap.xyz/?symbol=${activeTicker}` : "https://stock.on-tap.xyz"}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Stock on Tap 전체 주식 퀀트 플랫폼으로 이동"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-blue-200/80 dark:border-blue-900/40 bg-blue-50/70 hover:bg-blue-100/80 dark:bg-blue-950/30 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold transition-all shrink-0 shadow-2xs"
+            >
+              <TrendingUp className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+              <span className="text-[11.5px] sm:text-xs font-bold whitespace-nowrap">Stock on Tap</span>
+              <ExternalLink className="w-3 h-3 opacity-60 hidden sm:inline shrink-0" />
+            </a>
+
             <button
               onClick={onRefresh}
               disabled={isRefreshing}
@@ -150,6 +164,18 @@ export const Header: React.FC<HeaderProps> = ({
                       <span className="px-3 py-1.5 text-[11px] font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block">
                         On Tap 세트 메뉴 & 허브
                       </span>
+                      <a
+                        href={activeTicker ? `https://stock.on-tap.xyz/?symbol=${activeTicker}` : "https://stock.on-tap.xyz"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 flex items-center justify-between text-zinc-700 dark:text-zinc-300 font-semibold"
+                      >
+                        <span className="flex items-center gap-2">
+                          <TrendingUp className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                          <span>Stock on Tap (전체 주식)</span>
+                        </span>
+                        <ExternalLink className="w-3 h-3 text-zinc-400" />
+                      </a>
                       <a
                         href="https://pharma.on-tap.xyz"
                         target="_blank"
